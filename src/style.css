@@ -1,0 +1,83 @@
+.container {
+  text-align: center;
+  margin: 20px auto;
+  font-family: "Mali", cursive;
+  color: rgba(20, 33, 61, 0.8);
+  background-color: rgb(255, 255, 255);
+  max-width: 600px;
+  margin: 20px auto;
+}
+.card-body {
+  box-shadow: 1px 1px 3px grey;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 20px;
+  text-shadow: 3px 1px 3px rgba(20, 33, 61, 0.3);
+}
+
+h2 {
+  font-size: 23px;
+  text-shadow: 1px 1px 3px rgba(20, 33, 61, 0.4);
+}
+
+h3 {
+  font-size: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.form-control {
+  box-shadow: 1px 1px 3px grey;
+}
+.form-control:focus {
+  border-color: rgba(20, 33, 61, 0.5);
+  box-shadow: 0 0 0 0.15rem rgb(255 193 7 / 25%);
+}
+
+p,
+footer {
+  font-size: 12px;
+}
+
+button {
+  border-radius: 100px;
+  background: border-box;
+  border-width: thin;
+  border-color: rgba(20, 33, 61, 0.5);
+  height: fit-content;
+  box-shadow: 1px 1px 3px grey;
+  padding: 8px;
+  transition: all 200ms ease;
+}
+button:hover {
+  background: rgb(229, 229, 229);
+  box-shadow: 1px 1px 3px rgba(252, 163, 17, 0.5);
+}
+.btn-light {
+  transition: all 200ms ease;
+}
+.btn-light:hover {
+  background: rgb(229, 229, 229);
+  box-shadow: 0 0 0 0.15rem rgb(255 193 7 / 25%);
+}
+
+.main-temp {
+  line-height: 50px;
+}
+
+.row {
+  line-height: 35px;
+}
+
+.col {
+  font-size: 15px;
+}
+
+.days {
+  line-height: 20px;
+}
