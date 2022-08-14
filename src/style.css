@@ -20,6 +20,8 @@ h1 {
 h2 {
   font-size: 23px;
   text-shadow: 1px 1px 3px rgba(20, 33, 61, 0.4);
+  text-align: left;
+  margin: 5px 15px;
 }
 
 h3 {
@@ -43,15 +45,21 @@ p,
 footer {
   font-size: 12px;
 }
+#today {
+  text-align: right;
+  margin: 0 20px;
+  font-size: 16px;
+  padding: 5px 0px;
+}
 
 button {
-  border-radius: 100px;
+  border-radius: 14px;
   background: border-box;
   border-width: thin;
   border-color: rgba(20, 33, 61, 0.5);
   height: fit-content;
   box-shadow: 1px 1px 3px grey;
-  padding: 8px;
+  padding: 13px;
   transition: all 200ms ease;
 }
 button:hover {
@@ -68,10 +76,15 @@ button:hover {
 
 .main-temp {
   line-height: 50px;
+  display: block;
+  margin: 10px 20px 45px;
 }
 
 .row {
   line-height: 35px;
+}
+.main-info {
+  line-height: 15px;
 }
 
 .col {
