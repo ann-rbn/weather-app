@@ -63,7 +63,7 @@ if (minute < 10) {
   minute = "0" + minute;
 }
 let today = document.querySelector("#today");
-today.innerHTML = `${day}<br>${data}.${month}<br>${hour}:${minute}`;
+today.innerHTML = `${day} ${data}.${month}<br>${hour}:${minute}`;
 
 function getWeather(response) {
   let tempCity = Math.round(response.data.main.temp);
