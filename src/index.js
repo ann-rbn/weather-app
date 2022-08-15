@@ -1,46 +1,12 @@
-/*
-let weather = {
-  kyiv: {
-    temp: 19.7,
-    humidity: 80,
-  },
-  paris: {
-    temp: 17.3,
-    humidity: 50,
-  },
-  lisbon: {
-    temp: 30.2,
-    humidity: 20,
-  },
-  amsterdam: {
-    temp: 20.9,
-    humidity: 100,
-  },
-  warsaw: {
-    temp: -5,
-    humidity: 20,
-  },
-};
-
-let question = prompt("Enter a city");
+/*  to remember
 question = question.toLowerCase();
 question = question.trim();
-
 if (weather[question] === undefined) {
   alert(
     `Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${question}`
   );
-} else {
-  let celcius = Math.round(weather[question].temp);
-  let fahrenheit = (weather[question].temp * 9) / 5 + 32;
-  alert(
-    `It is currently ${celcius}°C (${fahrenheit}°F) in ${
-      question.charAt(0).toUpperCase() + question.slice(1)
-    } with a humidity of ${weather[question].humidity}%`
-  );
-}
+ fahrenheit = (weather[question].temp * 9) / 5 + 32;
 */
-
 let days = [
   "Sunday",
   "Monday",
@@ -66,9 +32,37 @@ let today = document.querySelector("#today");
 today.innerHTML = `${day} ${data}.${month}<br>${hour}:${minute}`;
 
 function getWeather(response) {
+  let city = document.querySelector("#city");
+  let cityName = response.data.name;
   let tempCity = Math.round(response.data.main.temp);
   let tempCelcius = document.querySelector("#temp");
-  tempCelcius.innerHTML = tempCity;
+  let tempMax = document.querySelector("#maxTemp");
+  let tempMaxChange = Math.round(response.data.main.temp_max);
+  let tempMin = document.querySelector("#minTemp");
+  let tempMinChange = Math.round(response.data.main.temp_min);
+  let wind = document.querySelector("#wind");
+  let windSpeed = Math.round(response.data.wind.speed);
+  let humidity = document.querySelector("#humidity");
+  let humidityChange = response.data.main.humidity;
+  let skyWeather = document.querySelector("#skyWeather");
+  let skyWeatherDescription = response.data.weather[0].main;
+
+  city.innerHTML = cityName;
+  tempCelcius.innerHTML = `${tempCity}°C`;
+
+  tempMax.innerHTML = `${tempMaxChange}°/`;
+  tempMin.innerHTML = `${tempMinChange}°C`;
+  wind.innerHTML = `${windSpeed} km/h`;
+  humidity.innerHTML = `${humidityChange}%`;
+  skyWeather.innerHTML = skyWeatherDescription;
+  console.log(response);
+}
+
+function search(city) {
+  let units = "metric";
+  let apiKey = "b1305a061eaf28d2e5ae44fea3603578";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}`;
+  axios.get(`${url}&appid=${apiKey}`).then(getWeather);
 }
 
 function searchCity(event) {
@@ -77,14 +71,13 @@ function searchCity(event) {
   let input = document.querySelector("#city");
   input.innerHTML = typeCity.value;
   let city = typeCity.value;
-  let units = "metric";
-  let apiKey = "b1305a061eaf28d2e5ae44fea3603578";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}`;
-  axios.get(`${url}&appid=${apiKey}`).then(getWeather);
+  search(city);
 }
 
 let input = document.querySelector("form");
 input.addEventListener("submit", searchCity);
+
+search("Kyiv");
 
 function changeData(response) {
   let temp = Math.round(response.data.main.temp);
