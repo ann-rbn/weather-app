@@ -74,10 +74,20 @@ button:hover {
   box-shadow: 0 0 0 0.15rem rgb(255 193 7 / 25%);
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 .main-temp {
-  line-height: 50px;
+  width: 100px;
   display: block;
   margin: 10px 20px 45px;
+}
+.more-info {
+  padding: 7px;
+  line-height: 1.75;
+  text-align: left;
 }
 
 .row {
