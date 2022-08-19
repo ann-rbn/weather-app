@@ -7,29 +7,31 @@ if (weather[question] === undefined) {
   );
  fahrenheit = (weather[question].temp * 9) / 5 + 32;
 */
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thuersday",
-  "Friday",
-  "Saturday",
-];
-let day = days[new Date().getDay()];
-let data = new Date().getDate();
-let month = new Date().getMonth() + 1;
-let hour = new Date().getHours();
-let minute = new Date().getMinutes();
+function currentDay() {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thuersday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[new Date().getDay()];
+  let data = new Date().getDate();
+  let month = new Date().getMonth() + 1;
+  let hour = new Date().getHours();
+  let minute = new Date().getMinutes();
 
-if (month < 10) {
-  month = "0" + month;
+  if (month < 10) {
+    month = "0" + month;
+  }
+  if (minute < 10) {
+    minute = "0" + minute;
+  }
+  let today = document.querySelector("#today");
+  today.innerHTML = `Last update:<br>${day} ${data}.${month}<br>${hour}:${minute}`;
 }
-if (minute < 10) {
-  minute = "0" + minute;
-}
-let today = document.querySelector("#today");
-today.innerHTML = `${day} ${data}.${month}<br>${hour}:${minute}`;
 
 function getWeather(response) {
   let city = document.querySelector("#city");
@@ -55,7 +57,7 @@ function getWeather(response) {
   wind.innerHTML = `${windSpeed} km/h`;
   humidity.innerHTML = `${humidityChange}%`;
   skyWeather.innerHTML = skyWeatherDescription;
-  console.log(response);
+  currentDay();
 }
 
 function search(city) {
@@ -85,7 +87,7 @@ function changeData(response) {
   let currentTemp = document.querySelector("#temp");
   let cityName = document.querySelector("#city");
   cityName.innerHTML = city;
-  currentTemp.innerHTML = temp;
+  currentTemp.innerHTML = `${temp}°C`;
 }
 
 function getLocation(position) {

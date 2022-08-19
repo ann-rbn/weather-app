@@ -29,7 +29,7 @@ h3 {
 }
 #skyWeather {
   text-transform: capitalize;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 form {
@@ -49,6 +49,7 @@ p,
 footer {
   font-size: 12px;
 }
+
 #today {
   text-align: right;
   margin: 0 20px;
