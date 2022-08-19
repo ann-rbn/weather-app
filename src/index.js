@@ -45,7 +45,7 @@ function getWeather(response) {
   let humidity = document.querySelector("#humidity");
   let humidityChange = response.data.main.humidity;
   let skyWeather = document.querySelector("#skyWeather");
-  let skyWeatherDescription = response.data.weather[0].main;
+  let skyWeatherDescription = response.data.weather[0].description;
 
   city.innerHTML = cityName;
   tempCelcius.innerHTML = `${tempCity}°C`;

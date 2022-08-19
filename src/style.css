@@ -26,6 +26,7 @@ h2 {
 
 h3 {
   font-size: 20px;
+  text-transform: capitalize;
 }
 
 form {
