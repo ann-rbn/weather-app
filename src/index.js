@@ -48,6 +48,15 @@ function getWeather(response) {
   let humidityChange = response.data.main.humidity;
   let skyWeather = document.querySelector("#skyWeather");
   let skyWeatherDescription = response.data.weather[0].description;
+  let iconWeather = document.querySelector("#icon");
+  let iconWeatherSource = response.data.weather[0].icon;
+
+  skyWeather.innerHTML = skyWeatherDescription;
+  iconWeather.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconWeatherSource}.png`
+  );
+  iconWeather.setAttribute("alt", response.data.weather[0].description);
 
   city.innerHTML = cityName;
   tempCelcius.innerHTML = `${tempCity}°C`;
@@ -56,7 +65,7 @@ function getWeather(response) {
   tempMin.innerHTML = `${tempMinChange}°C`;
   wind.innerHTML = `${windSpeed} km/h`;
   humidity.innerHTML = `${humidityChange}%`;
-  skyWeather.innerHTML = skyWeatherDescription;
+
   currentDay();
 }
 
