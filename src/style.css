@@ -1,11 +1,9 @@
 .container {
   text-align: center;
-  margin: 20px auto;
+  margin: 70px auto;
   font-family: "Mali", cursive;
   color: rgba(20, 33, 61, 0.8);
-  background-color: rgb(255, 255, 255);
   max-width: 600px;
-  margin: 20px auto;
 }
 .card-body {
   box-shadow: 1px 1px 3px grey;

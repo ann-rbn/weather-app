@@ -1,11 +1,6 @@
 /*  to remember
-question = question.toLowerCase();
-question = question.trim();
-if (weather[question] === undefined) {
-  alert(
-    `Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${question}`
-  );
- fahrenheit = (weather[question].temp * 9) / 5 + 32;
+
+ fahrenheit = ;
 */
 function currentDay() {
   let days = [
@@ -34,9 +29,10 @@ function currentDay() {
 }
 
 function getWeather(response) {
+  celcius = Math.round(response.data.main.temp);
+
   let city = document.querySelector("#city");
   let cityName = response.data.name;
-  let tempCity = Math.round(response.data.main.temp);
   let tempCelcius = document.querySelector("#temp");
   let tempMax = document.querySelector("#maxTemp");
   let tempMaxChange = Math.round(response.data.main.temp_max);
@@ -59,8 +55,7 @@ function getWeather(response) {
   iconWeather.setAttribute("alt", response.data.weather[0].description);
 
   city.innerHTML = cityName;
-  tempCelcius.innerHTML = `${tempCity}°C`;
-
+  tempCelcius.innerHTML = `${celcius}°C`;
   tempMax.innerHTML = `${tempMaxChange}°/`;
   tempMin.innerHTML = `${tempMinChange}°C`;
   wind.innerHTML = `${windSpeed} km/h`;
@@ -88,8 +83,6 @@ function searchCity(event) {
 let input = document.querySelector("form");
 input.addEventListener("submit", searchCity);
 
-search("Kyiv");
-
 function changeData(response) {
   let temp = Math.round(response.data.main.temp);
   let city = response.data.name;
@@ -111,39 +104,29 @@ function getLocation(position) {
 function getPosition() {
   navigator.geolocation.getCurrentPosition(getLocation);
 }
+
 let currentLocButton = document.querySelector("#currentLocation");
 currentLocButton.addEventListener("click", getPosition);
 
-/*
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let tempCelcius = document.querySelector("#temp");
-
-  tempCelcius.innerHTML = 66;
-}
-
-function convertIconToF(event) {
-  event.preventDefault();
-  let iconCelcius = document.querySelector("#celcius-icon");
-  iconCelcius.innerHTML = "°F";
+  let tempFahrenheit = document.querySelector("#temp");
+  let newFahrTemp = Math.round((celcius * 9) / 5 + 32);
+  tempFahrenheit.innerHTML = `${newFahrTemp}°F`;
 }
 
 let convertButton = document.querySelector("#clickToChange");
 convertButton.addEventListener("mouseover", convertToFahrenheit);
-convertButton.addEventListener("mouseover", convertIconToF);
 
 function convertToCelcius(event) {
   event.preventDefault();
   let tempCelcius = document.querySelector("#temp");
+  tempCelcius.innerHTML = `${celcius}°C`;
+}
 
-  tempCelcius.innerHTML = 20;
-}
-function convertIconToC(event) {
-  event.preventDefault();
-  let iconCelcius = document.querySelector("#celcius-icon");
-  iconCelcius.innerHTML = "°C";
-}
 let changeBackButton = document.querySelector("#clickToChange");
 changeBackButton.addEventListener("mouseout", convertToCelcius);
-changeBackButton.addEventListener("mouseout", convertIconToC);
-*/
+
+let celcius = null;
+
+search("Kyiv");
