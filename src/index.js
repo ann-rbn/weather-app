@@ -1,7 +1,3 @@
-/*  to remember
-
- fahrenheit = ;
-*/
 function currentDay() {
   let days = [
     "Sunday",
