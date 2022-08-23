@@ -46,6 +46,13 @@ form {
 p,
 footer {
   font-size: 12px;
+  line-height: 1.5;
+  margin-top: 3px;
+}
+
+#weather-forecast {
+  margin: 0 10px 0 10px;
+  max-height: 135px;
 }
 
 #today {
@@ -53,6 +60,7 @@ footer {
   margin: 0 20px;
   font-size: 16px;
   padding: 5px 0px;
+  line-height: 1;
 }
 
 button {
@@ -93,13 +101,9 @@ ul {
   text-align: left;
 }
 
-.row {
-  line-height: 35px;
+.weather-for-today {
+  max-height: 190px;
 }
-.main-info {
-  line-height: 15px;
-}
-
 .col {
   font-size: 15px;
 }

@@ -24,6 +24,30 @@ function currentDay() {
   today.innerHTML = `Last update:<br>${day} ${data}.${month}<br>${hour}:${minute}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = "";
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sut"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+    <button>
+      <i class="bi bi-cloud-sun"></i>
+      <br />
+     <span id="forecast-max-temp">21°/</span>
+     <span id="forecast-min-temp">19°C</span>
+    </button>
+    <p>${day} 27.06</p>
+  </div>
+  `;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function getWeather(response) {
   celcius = Math.round(response.data.main.temp);
 
@@ -126,3 +150,4 @@ changeBackButton.addEventListener("mouseout", convertToCelcius);
 let celcius = null;
 
 search("Kyiv");
+displayForecast();
