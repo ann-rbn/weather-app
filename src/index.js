@@ -54,15 +54,15 @@ function getWeather(response) {
   let city = document.querySelector("#city");
   let cityName = response.data.name;
   let tempCelcius = document.querySelector("#temp");
-  let tempMax = document.querySelector("#maxTemp");
+  let tempMax = document.querySelector("#max-temp");
   let tempMaxChange = Math.round(response.data.main.temp_max);
-  let tempMin = document.querySelector("#minTemp");
+  let tempMin = document.querySelector("#min-temp");
   let tempMinChange = Math.round(response.data.main.temp_min);
   let wind = document.querySelector("#wind");
   let windSpeed = Math.round(response.data.wind.speed);
   let humidity = document.querySelector("#humidity");
   let humidityChange = response.data.main.humidity;
-  let skyWeather = document.querySelector("#skyWeather");
+  let skyWeather = document.querySelector("#sky-weather");
   let skyWeatherDescription = response.data.weather[0].description;
   let iconWeather = document.querySelector("#icon");
   let iconWeatherSource = response.data.weather[0].icon;
@@ -125,7 +125,7 @@ function getPosition() {
   navigator.geolocation.getCurrentPosition(getLocation);
 }
 
-let currentLocButton = document.querySelector("#currentLocation");
+let currentLocButton = document.querySelector("#current-location");
 currentLocButton.addEventListener("click", getPosition);
 
 function convertToFahrenheit(event) {
@@ -135,7 +135,7 @@ function convertToFahrenheit(event) {
   tempFahrenheit.innerHTML = `${newFahrTemp}°F`;
 }
 
-let convertButton = document.querySelector("#clickToChange");
+let convertButton = document.querySelector("#hover-to-change");
 convertButton.addEventListener("mouseover", convertToFahrenheit);
 
 function convertToCelcius(event) {
@@ -144,7 +144,7 @@ function convertToCelcius(event) {
   tempCelcius.innerHTML = `${celcius}°C`;
 }
 
-let changeBackButton = document.querySelector("#clickToChange");
+let changeBackButton = document.querySelector("#hover-to-change");
 changeBackButton.addEventListener("mouseout", convertToCelcius);
 
 let celcius = null;

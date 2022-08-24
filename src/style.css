@@ -1,12 +1,18 @@
+body {
+  background-color: rgba(234, 231, 220, 0.2);
+}
+
 .container {
   text-align: center;
   margin: 70px auto;
   font-family: "Mali", cursive;
-  color: rgba(20, 33, 61, 0.8);
+  color: rgb(141, 142, 138);
   max-width: 600px;
 }
+
 .card-body {
-  box-shadow: 1px 1px 3px grey;
+  box-shadow: 1px 1px 3px rgb(141, 142, 138);
+  background-color: rgba(234, 231, 220, 0.4);
 }
 
 h1 {
@@ -20,34 +26,49 @@ h2 {
   text-shadow: 1px 1px 3px rgba(20, 33, 61, 0.4);
   text-align: left;
   margin: 5px 15px;
+  color: rgb(232, 90, 79);
 }
 
 h3 {
   font-size: 20px;
 }
-#skyWeather {
+
+#sky-weather {
   text-transform: capitalize;
   font-size: 12px;
 }
 
-form {
-  margin-bottom: 20px;
-  margin-left: 10px;
-}
-
 .form-control {
-  box-shadow: 1px 1px 3px grey;
+  box-shadow: 1px 1px 3px rgb(141, 142, 138);
+  background-color: rgba(234, 231, 220, 0.4);
+  color: rgb(141, 142, 138);
+}
+.form-control:hover {
+  background: rgba(234, 231, 220, 0.5);
+  border-color: rgba(232, 90, 79, 0.4);
+  box-shadow: 0 0 0 0.15rem rgba(233, 128, 116, 0.25);
 }
 .form-control:focus {
-  border-color: rgba(20, 33, 61, 0.5);
-  box-shadow: 0 0 0 0.15rem rgb(255 193 7 / 25%);
+  background: rgba(234, 231, 220, 0.5);
+  border-color: rgba(232, 90, 79, 0.4);
+  box-shadow: 0 0 0 0.15rem rgba(233, 128, 116, 0.25);
 }
 
 p,
 footer {
   font-size: 12px;
-  line-height: 1.5;
   margin-top: 3px;
+}
+
+footer {
+  text-align: left;
+}
+
+a {
+  color: rgb(237, 128, 116);
+}
+a:hover {
+  color: rgb(232, 90, 79);
 }
 
 #weather-forecast {
@@ -66,31 +87,28 @@ footer {
 button {
   border-radius: 14px;
   background: border-box;
-  border-width: thin;
-  border-color: rgba(20, 33, 61, 0.5);
+  border-width: inherit;
   height: fit-content;
-  box-shadow: 1px 1px 3px grey;
+  box-shadow: 1px 1px 3px rgb(141, 142, 138);
   padding: 13px;
   transition: all 200ms ease;
+  color: rgb(141, 142, 138);
 }
 button:hover {
-  background: rgb(229, 229, 229);
-  box-shadow: 1px 1px 3px rgba(252, 163, 17, 0.5);
-}
-.btn-light {
-  transition: all 200ms ease;
-}
-.btn-light:hover {
-  background: rgb(229, 229, 229);
-  box-shadow: 0 0 0 0.15rem rgb(255 193 7 / 25%);
+  background: rgba(234, 231, 220, 0.5);
+  box-shadow: 1px 1px 3px rgba(233, 128, 116, 0.8);
 }
 
 ul {
   list-style-type: none;
   padding: 0;
 }
+.main-info {
+  margin-top: 15px;
+}
 
 .main-temp {
+  color: rgb(232, 90, 79);
   width: 100px;
   display: block;
   margin: 10px 20px 45px;
@@ -103,11 +121,4 @@ ul {
 
 .weather-for-today {
   max-height: 190px;
-}
-.col {
-  font-size: 15px;
-}
-
-.days {
-  line-height: 20px;
 }
