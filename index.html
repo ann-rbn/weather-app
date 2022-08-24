@@ -34,7 +34,7 @@
 
         <form>
           <div class="row">
-            <div class=" col-7">
+            <div class="col-7">
               <input class="form-control" list="datalistOptions"
                 id="exampleDataList" placeholder="Type city" autocomplete="off"
                 autofocus>
@@ -53,17 +53,18 @@
         </form>
 
         <div class="row main-info">
-          <div class=" col-7">
+          <div class="col-7">
             <h2 id="city">
             </h2>
           </div>
+
           <div class="col-5">
             <p id="today"></p>
           </div>
         </div>
 
         <div class="row weather-for-today">
-          <div class="col-4">
+          <div class="col-3">
             <button class="main-temp" id="hover-to-change">
               <img src="" alt="" id="icon" />
               <h3>
@@ -75,8 +76,13 @@
               </h3>
             </button>
           </div>
-
-          <div class="col-8 more-info">
+          <div class="col-3">
+            <button class="button converter"
+              id="temperature-converter-celcius">°C</button>
+            <button class="button converter"
+              id="temperature-converter-fahrenheit">°F</button>
+          </div>
+          <div class="col-6 more-info">
             <ul>
               <li>
                 Max/Min temp:
