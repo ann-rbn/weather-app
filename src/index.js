@@ -135,8 +135,10 @@ function convertToFahrenheit(event) {
   tempFahrenheit.innerHTML = `${newFahrTemp}°F`;
 }
 
-let convertButton = document.querySelector("#hover-to-change");
-convertButton.addEventListener("mouseover", convertToFahrenheit);
+let convertButtonFahrenheit = document.querySelector(
+  "#temperature-converter-fahrenheit"
+);
+convertButtonFahrenheit.addEventListener("click", convertToFahrenheit);
 
 function convertToCelcius(event) {
   event.preventDefault();
@@ -144,8 +146,10 @@ function convertToCelcius(event) {
   tempCelcius.innerHTML = `${celcius}°C`;
 }
 
-let changeBackButton = document.querySelector("#hover-to-change");
-changeBackButton.addEventListener("mouseout", convertToCelcius);
+let changeButtonCelcius = document.querySelector(
+  "#temperature-converter-celcius"
+);
+changeButtonCelcius.addEventListener("click", convertToCelcius);
 
 let celcius = null;
 
