@@ -24,28 +24,50 @@ function currentDay() {
   today.innerHTML = `Last update:<br>${day} ${data}.${month}<br>${hour}:${minute}`;
 }
 
-function displayForecast() {
+function formatDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let futureForecast = response.data.daily;
+
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = "";
 
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sut"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  futureForecast.forEach(function (futureDay, index) {
+    if (index < 7 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2">
     <button>
-      <i class="bi bi-cloud-sun"></i>
+    <img
+       src ='http://openweathermap.org/img/wn/${
+         futureDay.weather[0].icon
+       }.png' atl='' />
       <br />
-     <span id="forecast-max-temp">21°/</span>
-     <span id="forecast-min-temp">19°C</span>
+     <span id="forecast-max-temp">${Math.round(futureDay.temp.max)}°/</span>
+     <span id="forecast-min-temp">${Math.round(futureDay.temp.min)}°C</span>
     </button>
-    <p>${day} 27.06</p>
+    <p>${formatDays(futureDay.dt)}</p>
   </div>
   `;
+    }
   });
-
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getFutureWeather(coordinates) {
+  console.log(coordinates);
+  let units = "metric";
+  let apiKey = "fe1483f743b581b5520a1b725af03a49";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getWeather(response) {
@@ -82,6 +104,8 @@ function getWeather(response) {
   humidity.innerHTML = `${humidityChange}%`;
 
   currentDay();
+
+  getFutureWeather(response.data.coord);
 }
 
 function search(city) {
@@ -154,4 +178,3 @@ changeButtonCelcius.addEventListener("click", convertToCelcius);
 let celcius = null;
 
 search("Kyiv");
-displayForecast();
