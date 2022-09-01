@@ -1,18 +1,19 @@
 body {
-  background-color: rgba(234, 231, 220, 0.2);
+  background-color: rgba(248, 244, 233, 0.2);
 }
 
 .container {
   text-align: center;
   margin: 70px auto;
   font-family: "Mali", cursive;
-  color: rgb(141, 142, 138);
+  color: rgb(47, 92, 108);
   max-width: 600px;
 }
 
-.card-body {
-  box-shadow: 1px 1px 3px rgb(141, 142, 138);
-  background-color: rgba(234, 231, 220, 0.4);
+.card {
+  border-style: none;
+  box-shadow: 1px 1px 3px rgb(195, 182, 159);
+  background-color: rgba(248, 244, 233, 0.5);
 }
 
 .buttons-change-units {
@@ -20,15 +21,18 @@ body {
   margin: 10px 20px;
 }
 .converter {
+  box-shadow: 1px 1px 3px rgb(195, 182, 159);
+  background-color: rgba(248, 244, 233, 0.2);
   border-radius: 5px;
   width: 35px;
   padding: 5px;
   transition: all 200ms ease;
 }
 .converter:hover {
-  background: rgba(234, 231, 220, 0.6);
-  box-shadow: 1px 1px 3px rgba(233, 128, 116, 0.8);
-  color: rgb(232, 90, 79);
+  background: rgba(248, 244, 233, 0.2);
+  box-shadow: 1px 1px 3px rgba(245, 137, 93, 0.5);
+  color: rgb(245, 137, 93);
+  border-color: rgba(245, 137, 93, 0.3);
 }
 
 h1 {
@@ -42,11 +46,15 @@ h2 {
   text-shadow: 1px 1px 3px rgba(20, 33, 61, 0.4);
   text-align: left;
   margin: 5px 15px;
-  color: rgb(232, 90, 79);
+  color: rgb(245, 137, 93);
 }
 
 h3 {
   font-size: 20px;
+}
+
+#temp {
+  color: rgb(245, 137, 93);
 }
 
 #sky-weather {
@@ -55,22 +63,22 @@ h3 {
 }
 
 .form-control {
-  box-shadow: 1px 1px 3px rgba(141, 142, 138, 0.8);
-  background-color: rgba(234, 231, 220, 0.2);
-
-  color: rgb(141, 142, 138);
+  box-shadow: 1px 1px 3px rgb(195, 182, 159);
+  background-color: rgba(248, 244, 233, 0.2);
+  color: rgb(47, 92, 108);
   transition: all 200ms ease;
 }
 .form-control:hover {
-  background: rgba(234, 231, 220, 0.5);
-  border-color: rgba(232, 90, 79, 0.4);
-  box-shadow: 1px 1px 3px rgba(233, 128, 116, 0.8);
+  color: rgb(245, 137, 93);
+  background: rgba(248, 244, 233, 0.2);
+  border-color: rgba(245, 137, 93, 0.3);
+  box-shadow: 1px 1px 3px rgba(245, 137, 93, 0.5);
 }
 
 .form-control:focus {
-  background: rgba(234, 231, 220, 0.5);
-  border-color: rgba(232, 90, 79, 0.4);
-  box-shadow: 1px 1px 3px rgba(233, 128, 116, 0.8);
+  background: rgba(248, 244, 233, 0.2);
+  border-color: rgba(245, 137, 93, 0.3);
+  box-shadow: 1px 1px 3px rgba(245, 137, 93, 0.5);
 }
 
 p,
@@ -84,10 +92,10 @@ footer {
 }
 
 a {
-  color: rgb(237, 128, 116);
+  color: rgb(47, 92, 108);
 }
 a:hover {
-  color: rgb(232, 90, 79);
+  color: rgb(245, 137, 93);
 }
 
 #weather-forecast {
@@ -105,12 +113,12 @@ a:hover {
 
 button {
   border-radius: 14px;
-  background: border-box;
+  background: rgba(47, 92, 108, 0.2);
   border-width: inherit;
   height: fit-content;
   box-shadow: 1px 1px 3px rgb(141, 142, 138);
   padding: 13px;
-  color: rgb(141, 142, 138);
+  color: rgb(47, 92, 108);
 }
 
 ul {
@@ -120,9 +128,8 @@ ul {
 .main-info {
   margin-top: 15px;
 }
-
 .main-temp {
-  color: rgb(232, 90, 79);
+  color: rgb(47, 92, 108);
   width: 100px;
   display: block;
   margin: 10px 20px 45px;

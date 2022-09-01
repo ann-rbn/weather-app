@@ -4,7 +4,7 @@ function currentDay() {
     "Monday",
     "Tuesday",
     "Wednesday",
-    "Thuersday",
+    "Thursday",
     "Friday",
     "Saturday",
   ];
@@ -33,9 +33,7 @@ function formatDays(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let futureForecast = response.data.daily;
-
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = "";
 
