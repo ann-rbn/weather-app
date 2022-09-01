@@ -98,9 +98,8 @@ function getWeather(response) {
   tempCelcius.innerHTML = `${celcius}°C`;
   tempMax.innerHTML = `${tempMaxChange}°/`;
   tempMin.innerHTML = `${tempMinChange}°C`;
-  wind.innerHTML = `${windSpeed} km/h`;
+  wind.innerHTML = `${windSpeed} m/s`;
   humidity.innerHTML = `${humidityChange}%`;
-
   currentDay();
 
   getFutureWeather(response.data.coord);
@@ -149,30 +148,5 @@ function getPosition() {
 
 let currentLocButton = document.querySelector("#current-location");
 currentLocButton.addEventListener("click", getPosition);
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let tempFahrenheit = document.querySelector("#temp");
-  let newFahrTemp = Math.round((celcius * 9) / 5 + 32);
-  tempFahrenheit.innerHTML = `${newFahrTemp}°F`;
-}
-
-let convertButtonFahrenheit = document.querySelector(
-  "#temperature-converter-fahrenheit"
-);
-convertButtonFahrenheit.addEventListener("click", convertToFahrenheit);
-
-function convertToCelcius(event) {
-  event.preventDefault();
-  let tempCelcius = document.querySelector("#temp");
-  tempCelcius.innerHTML = `${celcius}°C`;
-}
-
-let changeButtonCelcius = document.querySelector(
-  "#temperature-converter-celcius"
-);
-changeButtonCelcius.addEventListener("click", convertToCelcius);
-
-let celcius = null;
 
 search("Kyiv");

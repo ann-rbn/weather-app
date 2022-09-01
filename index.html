@@ -65,7 +65,7 @@
 
         <div class="row weather-for-today">
           <div class="col-3">
-            <button class="main-temp" id="hover-to-change">
+            <button class="main-temp">
               <img src="" alt="" id="icon" />
               <h3>
                 <span id="temp">
@@ -77,13 +77,6 @@
             </button>
           </div>
           <div class="col-9">
-            <div class="buttons-change-units">
-              <button class="button converter"
-                id="temperature-converter-celcius">°C</button>
-              <button class="button converter"
-                id="temperature-converter-fahrenheit">°F</button>
-            </div>
-
             <ul class="more-info">
               <li>
                 Max/Min temp:
@@ -99,10 +92,9 @@
             </ul>
           </div>
         </div>
+      </div>
 
-        <div class="row" id='weather-forecast'>
-        </div>
-
+      <div class="row" id='weather-forecast'>
       </div>
     </div>
     <footer>
@@ -110,6 +102,8 @@
       Anna Ruban
     </footer>
   </div>
+
+
   <script src="src/index.js">
   </script>
 </body>

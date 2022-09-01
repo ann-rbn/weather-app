@@ -16,25 +16,6 @@ body {
   background-color: rgba(248, 244, 233, 0.5);
 }
 
-.buttons-change-units {
-  text-align: left;
-  margin: 10px 20px;
-}
-.converter {
-  box-shadow: 1px 1px 3px rgb(195, 182, 159);
-  background-color: rgba(248, 244, 233, 0.2);
-  border-radius: 5px;
-  width: 35px;
-  padding: 5px;
-  transition: all 200ms ease;
-}
-.converter:hover {
-  background: rgba(248, 244, 233, 0.2);
-  box-shadow: 1px 1px 3px rgba(245, 137, 93, 0.5);
-  color: rgb(245, 137, 93);
-  border-color: rgba(245, 137, 93, 0.3);
-}
-
 h1 {
   font-size: 30px;
   margin: 20px;
@@ -45,7 +26,6 @@ h2 {
   font-size: 23px;
   text-shadow: 1px 1px 3px rgba(20, 33, 61, 0.4);
   text-align: left;
-  margin: 5px 15px;
   color: rgb(245, 137, 93);
 }
 
@@ -62,6 +42,9 @@ h3 {
   font-size: 12px;
 }
 
+form {
+  margin: 20px;
+}
 .form-control {
   box-shadow: 1px 1px 3px rgb(195, 182, 159);
   background-color: rgba(248, 244, 233, 0.2);
@@ -74,7 +57,6 @@ h3 {
   border-color: rgba(245, 137, 93, 0.3);
   box-shadow: 1px 1px 3px rgba(245, 137, 93, 0.5);
 }
-
 .form-control:focus {
   background: rgba(248, 244, 233, 0.2);
   border-color: rgba(245, 137, 93, 0.3);
@@ -96,11 +78,6 @@ a {
 }
 a:hover {
   color: rgb(245, 137, 93);
-}
-
-#weather-forecast {
-  margin: 0 10px 0 10px;
-  max-height: 135px;
 }
 
 #today {
@@ -126,13 +103,13 @@ ul {
   list-style-type: none;
 }
 .main-info {
-  margin-top: 15px;
+  margin: 5px 15px;
 }
 .main-temp {
   color: rgb(47, 92, 108);
   width: 100px;
   display: block;
-  margin: 10px 20px 45px;
+  margin: 10px 20px 20px;
 }
 .more-info {
   padding: 0;
@@ -142,4 +119,8 @@ ul {
 
 .weather-for-today {
   max-height: 190px;
+}
+
+#weather-forecast {
+  margin: 0 20px 0 20px;
 }
