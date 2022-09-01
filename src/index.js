@@ -23,7 +23,6 @@ function currentDay() {
   let today = document.querySelector("#today");
   today.innerHTML = `Last update:<br>${day} ${data}.${month}<br>${hour}:${minute}`;
 }
-
 function formatDays(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -61,7 +60,6 @@ function displayForecast(response) {
 }
 
 function getFutureWeather(coordinates) {
-  console.log(coordinates);
   let units = "metric";
   let apiKey = "fe1483f743b581b5520a1b725af03a49";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
