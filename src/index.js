@@ -98,8 +98,8 @@ function getWeather(response) {
   tempMin.innerHTML = `${tempMinChange}°C`;
   wind.innerHTML = `${windSpeed} m/s`;
   humidity.innerHTML = `${humidityChange}%`;
-  currentDay();
 
+  currentDay();
   getFutureWeather(response.data.coord);
 }
 
@@ -122,22 +122,13 @@ function searchCity(event) {
 let input = document.querySelector("form");
 input.addEventListener("submit", searchCity);
 
-function changeData(response) {
-  let temp = Math.round(response.data.main.temp);
-  let city = response.data.name;
-  let currentTemp = document.querySelector("#temp");
-  let cityName = document.querySelector("#city");
-  cityName.innerHTML = city;
-  currentTemp.innerHTML = `${temp}°C`;
-}
-
 function getLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "fe1483f743b581b5520a1b725af03a49";
   let units = "metric";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}`;
-  axios.get(`${url}&appid=${apiKey}`).then(changeData);
+  axios.get(`${url}&appid=${apiKey}`).then(getWeather);
 }
 
 function getPosition() {
