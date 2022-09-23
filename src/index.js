@@ -41,7 +41,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-    <div class="col-2">
+    <div class="col-sm-2">
     <button>
     <img
        src ='http://openweathermap.org/img/wn/${
